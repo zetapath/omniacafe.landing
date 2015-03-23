@@ -1,0 +1,22 @@
+{
+  "name"            : "omniacafe",
+  "version"         : "1.03.23",
+  "description"     : "...",
+  "homepage"        : "http://omniacafe.com",
+  "author"          : "zetapath ltd.",
+  "dependencies": {
+    "coffee-script" : "*"
+  },
+  "devDependencies" : {
+    "gulp"        : "*",
+    "gulp-coffee" : "*",
+    "gulp-concat" : "*",
+    "gulp-connect": "*",
+    "gulp-flatten": "*",
+    "gulp-header" : "*",
+    "gulp-stylus" : "*",
+    "gulp-uglify" : "*",
+    "gulp-util"   : "*",
+    "gulp-yml"    : "*"
+  }
+}

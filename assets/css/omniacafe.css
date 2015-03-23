@@ -1,0 +1,9 @@
+/**
+ * omniacafe - ...
+ * @version v1.03.23
+ * @link    http://omniacafe.com
+ * @author   ()
+ * @license 
+ */
+@import url("http://fonts.googleapis.com/css?family=Raleway:300,900");
+body{color:#fff;font-size:1rem;font-family:"Raleway","Helvetica Neue","Helvetica","sans-serif";background-color:#4a4a4a;background-image:url("/assets/img/background.jpg");-webkit-background-size:cover !important;-moz-background-size:cover !important;-ms-background-size:cover !important;background-size:cover !important;background-position:50% 50%;}body > section{height:100vh;background:url("/assets/img/background-dots.png") repeat top left;}body > section > img{width:25vw}body > section > footer{position:absolute;left:0;right:0;bottom:.5rem;font-size:75%;text-align:center;color:rgba(255,255,255,0.25);}body > section > footer > span{color:#b99d61}body > section > footer > a{color:rgba(255,255,255,0.5);text-decoration:none}.button,button,input[type="submit"],input[type="reset"],input[type="button"]{border:1px solid #bbb;-webkit-border-radius:BORDER-RADIUS;-moz-border-radius:BORDER-RADIUS;-ms-border-radius:BORDER-RADIUS;border-radius:BORDER-RADIUS;}.button:hover,button:hover,input[type="submit"]:hover,input[type="reset"]:hover,input[type="button"]:hover,.button:focus,button:focus,input[type="submit"]:focus,input[type="reset"]:focus,input[type="button"]:focus{color:#333;border-color:#888}.button.primary,button.primary,input[type="submit"].primary,input[type="reset"].primary,input[type="button"].primary{color:#fff;background-color:#b99d61;border-color:#b59757;}.button.primary:hover,button.primary:hover,input[type="submit"].primary:hover,input[type="reset"].primary:hover,input[type="button"].primary:hover,.button.primary:focus,button.primary:focus,input[type="submit"].primary:focus,input[type="reset"].primary:focus,input[type="button"].primary:focus{color:#fff;background-color:#b0914e;border-color:#a6894a}@media (max-width:400px){body > section > img{width:55vw}}
