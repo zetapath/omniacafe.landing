@@ -11,6 +11,12 @@ body
   *
     -webkit-font-smoothing    : antialiased
     -moz-osx-font-smoothing   : grayscale
+  .bck
+    &.dark
+      background-color        : darken(BACKGROUND, 5%)
+    &.theme
+      color                   : WHITE
+      background-color        : THEME
 
 // -- BUTTON -------------------------------------------------------------------
 .button, button, input[type="submit"], input[type="reset"], input[type="button"]
@@ -27,3 +33,6 @@ body
       color                   : WHITE
       background-color        : darken(THEME, 10%)
       border-color            : darken(THEME, 15%)
+
+.container
+  padding                     : UNIT 0

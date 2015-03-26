@@ -12,12 +12,15 @@ $ ->
   $(document).on "scroll", (event) ->
     px = soyjavi.dom.document.scrollTop()
     percent = parseInt (px * 100) / soyjavi.dom.landing.height()
-    if percent > 65
-      soyjavi.dom.landing.addClass "scroll"
-    else
-      soyjavi.dom.landing.removeClass "scroll"
 
-    if percent > 70
+    if percent > 5
+      soyjavi.dom.landing.children("span").addClass "hide"
+    else
+      soyjavi.dom.landing.children("span").removeClass "hide"
+
+    if percent > 35
       soyjavi.dom.header.addClass "scroll"
+      soyjavi.dom.landing.children("img").addClass "hide"
     else
       soyjavi.dom.header.removeClass "scroll"
+      soyjavi.dom.landing.children("img").removeClass "hide"

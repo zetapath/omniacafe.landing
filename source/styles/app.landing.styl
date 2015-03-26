@@ -1,10 +1,72 @@
 @media (max-width: 400px)
-  body
+  body[data-page="landing"]
     > article
         > img
           width                 : 55vw
 
-body
+body[data-page="landing"]
+  .bck
+    position                    : relative
+    background-size             : cover
+    background-position         : 50% 50%
+    transition                    all ANIMATION_DURATION ANIMATION_EASE
+    &:hover
+      background-position       : 60% 50%
+
+    &.dots
+      z-index                   : 0
+      color                     : WHITE
+      &:before
+        content                 : ""
+        z-index                 : 0
+        position                : absolute
+        top                     : 0
+        width                   : 100%
+        height                  : 100%
+        background              : url("/assets/img/background-dots.png") repeat top left
+        transition                opacity ANIMATION_DURATION
+      &:hover
+        &:before
+          opacity               : 0.75
+    &.city
+      background-image          : url("/assets/img/background-city.jpg")
+    &.shop
+      background-image          : url("/assets/img/background-shop.jpg")
+    &.work
+      background-image          : url("/assets/img/background-work.jpg")
+
+  .box
+    width                       : 50vw
+    height                      : 47.5vw
+    > :not(.dots)
+      z-index                   : 1
+    > h2
+      margin                    : 0
+      font-weight               : FONT_WEIGHT_NORMAL
+      &, + p
+        text-shadow             : 0 0 (2 * SPACE) alpha(BLACK, 50%)
+      > span
+        margin                  : 0 (SPACE / 2)
+        line-height               : 200%
+        font-weight             : FONT_WEIGHT_THIN
+        color                   : THEME
+      + p
+        &:before, &:after
+          content               : ""
+          margin                : 0 (SPACE / 2) (SPACE / 4) (SPACE / 2)
+          font-size             : U !important
+          color                 : THEME
+          display               : inline-block
+          height                : 2px
+          width                 : SIZE = (SPACE / 5)
+          height                : SIZE
+          border-radius         : SIZE
+          background-color      : THEME
+    > p
+      margin                    : 0 UNIT
+      + p
+        margin-top              : SPACE
+
   > header
     height                      : HEIGHT = (1.5 * UNIT)
     position                    : fixed
@@ -12,10 +74,11 @@ body
     left                        : 0
     right                       : 0
     z-index                     : 2
-    background-color            : alpha(WHITE, 90%)
+    background-color            : WHITE
     transition                    all ANIMATION_DURATION ANIMATION_EASE
     &.scroll
       top                       : 0
+      transition-delay            ANIMATION_DURATION
     > nav
       > a
         display                 : inline-block
@@ -25,89 +88,64 @@ body
         font-weight             : FONT_WEIGHT_BOLD
         line-height             : HEIGHT
         text-decoration         : none
-        color                   : COLOR
+        color                   : THEME
         background-color        : transparent
         vertical-align          : middle
         > img
           height                : HEIGHT
         &:not(.logo)
-          opacity               : 0.5
           transition              all ANIMATION_DURATION ANIMATION_EASE
           &:hover
-            opacity             : 1
+            color               : COLOR
             box-shadow            0 (SPACE / 8) THEME
 
   > article
     &.landing
-      position                : relative
-      height                    : 100vh
+      position                  : relative
+      height                    : 99vh
       background-image          : url("/assets/img/background.jpg")
-      background-size           : cover !important
-      // background-position       : 50% 50%
-      &.scroll
-        > img, > footer
-          opacity               : 0
-      > span
-        position                : absolute
-        top                     : 0
-        width                   : 100%
-        height                  : 100%
-        background              : url("/assets/img/background-dots.png") repeat top left
-        z-index                 : 0
-      > :not(span)
+      background-size           : cover
+      background-position       : 50% 50%
+      > *
         z-index                 : 1
         transition                all ANIMATION_DURATION ANIMATION_EASE
+        &.hide
+          opacity               : 0
       > img
         width                   : 25vw
-      > footer
+      > span
         position                : absolute
         left                    : 0
         right                   : 0
-        bottom                  : (SPACE / 2)
-        font-size               : FONT_SIZE_TINY
+        bottom                  : SPACE
+        font-size               : FONT_SIZE_SMALL
         text-align              : center
-        color                   : rgba(255,255,255,0.25)
-        > span
+        color                   : rgba(255,255,255,0.5)
+        > *
           color                 : THEME
-        > a
-          color                 : rgba(255,255,255,0.5)
-          text-decoration       : none
-    &.content
-      margin                    : UNIT 0
 
   > nav
     > a
-      width                     : SIZE = 50vw
-      height                    : SIZE
       color                     : BACKGROUND
       text-decoration           : none
       background-color          : lighten(COLOR, 50%)
-      transition                  all ANIMATION_DURATION ANIMATION_EASE
-      &:hover
-        background-color        : COLOR
-        > h2
-          > span
-            opacity             : 1
-      > h2
-        font-weight             : FONT_WEIGHT_BOLD
-        > span
-          margin                : 0 (SPACE / 2)
-          font-weight           : FONT_WEIGHT_THIN
-          color                 : THEME
-          opacity               : 0
-          transition              opacity ANIMATION_DURATION ANIMATION_EASE
-      > strong
-        font-weight             : FONT_WEIGHT_NORMAL
-        &:before, &:after
-          content               : ""
-          height                : (SPACE / 5)
-          width                 : SPACE
-          background-color      : red
-
 
   > footer
     padding                     : (2 * SPACE) 0
-    font-size                   : FONT_SIZE_TINY
-    text-align                  : center
-    color                       : WHITE
+    font-size                   : FONT_SIZE_SMALL
+    color                       : lighten(COLOR, 50%)
     background-color            : darken(COLOR, 75%)
+    > *
+      width                     : 50%
+      padding                   : 0 (2 * SPACE)
+      &.right
+        span
+          margin                : 0 (SPACE / 4)
+          text-align            : center
+    a
+      text-decoration           : none
+      color                     : THEME
+      padding-bottom            : (SPACE / 3)
+      transition                  all ANIMATION_DURATION
+      &:hover
+        box-shadow                0 1px WHITE
