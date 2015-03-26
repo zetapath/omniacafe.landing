@@ -5,4 +5,4 @@
  * @author   ()
  * @license 
  */
-(function(){var soyjavi;window.soyjavi=soyjavi={version:"1.02.06"},$(function(){return soyjavi.dom={document:$(document),landing:$(".landing"),text:$(".landing > *:not(.more)"),more:$(".landing > .more")},$(document).on("scroll",function(){var percent;return percent=100*soyjavi.dom.document.scrollTop()/soyjavi.dom.landing.height(),percent>10?soyjavi.dom.more.addClass("hide"):soyjavi.dom.more.removeClass("hide"),percent>25?soyjavi.dom.text.addClass("hide"):soyjavi.dom.text.removeClass("hide")})})}).call(this);
+(function(){var soyjavi;window.soyjavi=soyjavi={version:"1.02.06"},$(function(){return soyjavi.dom={document:$(document),header:$("header"),landing:$(".landing")},$(window).stellar(),$(document).on("scroll",function(){var percent,px;return px=soyjavi.dom.document.scrollTop(),percent=parseInt(100*px/soyjavi.dom.landing.height()),percent>65?soyjavi.dom.landing.addClass("scroll"):soyjavi.dom.landing.removeClass("scroll"),percent>70?soyjavi.dom.header.addClass("scroll"):soyjavi.dom.header.removeClass("scroll")})})}).call(this);
