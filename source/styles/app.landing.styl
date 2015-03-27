@@ -1,14 +1,8 @@
-@media (max-width: 400px)
-  body[data-page="landing"]
-    > article
-        > img
-          width                 : 55vw
-
 body[data-page="landing"]
   .bck
     position                    : relative
     background-size             : cover !important
-    // background-position         : 50% 50%
+    background-position         : 50% 50%
     &.dots
       z-index                   : 0
       color                     : WHITE
@@ -17,6 +11,8 @@ body[data-page="landing"]
         z-index                 : 0
         position                : absolute
         top                     : 0
+        right                   : 0
+        left                    : 0
         width                   : 100%
         height                  : 100%
         background              : url("/assets/img/background-dots.png") repeat top left
@@ -34,6 +30,7 @@ body[data-page="landing"]
   .box
     width                       : 50vw
     height                      : 47.5vw
+    overflow                    : hidden
     > :not(.dots)
       z-index                   : 1
     > h2
@@ -60,6 +57,7 @@ body[data-page="landing"]
           background-color      : THEME
     > p
       margin                    : 0 UNIT
+      text-align                : center
       + p
         margin-top              : SPACE
 
@@ -132,7 +130,6 @@ body[data-page="landing"]
     color                       : lighten(COLOR, 50%)
     background-color            : darken(COLOR, 75%)
     > *
-      width                     : 50%
       padding                   : 0 (2 * SPACE)
       &.right
         span
@@ -145,3 +142,46 @@ body[data-page="landing"]
       transition                  all ANIMATION_DURATION
       &:hover
         box-shadow                0 1px WHITE
+
+@media (max-width: 1024px)
+  body[data-page="landing"]
+    .box
+      > p
+        margin                  : 0 (UNIT / 2)
+        text-align              : justify
+
+@media (max-width: 400px)
+  body[data-page="landing"]
+    .container
+      padding                   : SPACE 0
+    p
+      text-align                : justify
+    .box
+      width                     : 100vw
+      &:not(.square)
+        height                  : auto
+        padding                 : SPACE 0
+      &.square
+        height                  : 50vw
+      > p
+        margin                  : 0 SPACE
+
+    > header
+      > nav
+        > a
+          margin                : 0 (SPACE / 2)
+          font-size             : FONT_SIZE_NORMAL
+          > img
+            vertical-align      : middle
+            height              : (UNIT / 1.65)
+
+    > article
+      &.landing
+        height                  : 100vh
+        > img
+          width                 : 55vw
+
+    > footer
+      > *
+        width                     : 100vw
+        text-align                : center !important
