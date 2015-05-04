@@ -8,7 +8,6 @@ $ ->
 
   $(window).stellar()
 
-
   $(document).on "scroll", (event) ->
     px = soyjavi.dom.document.scrollTop()
     percent = parseInt (px * 100) / soyjavi.dom.landing.height()

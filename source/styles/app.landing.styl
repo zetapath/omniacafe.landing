@@ -100,6 +100,7 @@ body[data-page="landing"]
       background-image          : url("/assets/img/background.jpg")
       background-size           : cover
       background-position       : 50% 50%
+      overflow                  : hidden
       > *
         z-index                 : 1
         transition                all ANIMATION_DURATION ANIMATION_EASE
@@ -177,7 +178,7 @@ body[data-page="landing"]
 
     > article
       &.landing
-        height                  : 512px
+        max-height              : 512px
         > img
           width                 : 55vw
 
