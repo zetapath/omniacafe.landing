@@ -6,7 +6,7 @@ $ ->
     header    : $ "header"
     landing   : $ ".landing"
 
-  $(window).stellar()
+  $(window).stellar() if $(window).width() > 400
 
   $(document).on "scroll", (event) ->
     px = soyjavi.dom.document.scrollTop()
