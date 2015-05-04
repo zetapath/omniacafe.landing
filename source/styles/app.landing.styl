@@ -22,6 +22,8 @@ body[data-page="landing"]
           opacity               : 0.75
     &.city
       background-image          : url("/assets/img/background-city.jpg")
+    &.story
+      background-image          : url("/assets/img/background-story-3.jpg")
     &.shop
       background-image          : url("/assets/img/background-shop.jpg")
     &.work
@@ -94,6 +96,18 @@ body[data-page="landing"]
             box-shadow            0 (SPACE / 8) THEME
 
   > article
+    .button
+      margin-top                : SPACE
+      height                    : HEIGHT = (UNIT / 1.25)
+      font-size                 : FONT_SIZE_NORMAL
+      font-weight               : FONT_WEIGHT_BOLD !important
+      line-height               : HEIGHT
+      color                     : THEME
+      border                    : solid 1px alpha(THEME, 25%)
+      transition                  all ANIMATION_DURATION ANIMATION_EASE
+      &:hover
+        background-color        : THEME
+        color                   : WHITE
     &.landing
       position                  : relative
       height                    : 99vh
