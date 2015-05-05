@@ -1,0 +1,55 @@
+body[data-page="landing"]
+  > header
+    height                      : HEIGHT = (1.5 * UNIT)
+    position                    : fixed
+    top                         : -(HEIGHT)
+    left                        : 0
+    right                       : 0
+    z-index                     : 2
+    background-color            : WHITE
+    transition                    all ANIMATION_DURATION ANIMATION_EASE
+    &.scroll
+      top                       : 0
+      transition-delay            ANIMATION_DURATION
+    > nav
+      > a
+        display                 : inline-block
+        margin                  : 0 SPACE
+        height                  : HEIGHT = (UNIT / 1.25)
+        font-size               : FONT_SIZE_BIG
+        font-weight             : FONT_WEIGHT_BOLD
+        line-height             : HEIGHT
+        text-decoration         : none
+        color                   : THEME
+        background-color        : transparent
+        vertical-align          : middle
+        > img
+          height                : HEIGHT
+        &:not(.logo)
+          transition              all ANIMATION_DURATION ANIMATION_EASE
+          &:hover
+            color               : COLOR
+            box-shadow            0 (SPACE / 8) THEME
+      &.social
+        position                : absolute
+        right                   : (1.5 * SPACE)
+        top                     : (1.5 * SPACE)
+        display                 : block
+        > a
+          opacity               : 0.5
+          margin                : 0 0 0 (1.5 * SPACE)
+          &:hover
+            opacity             : 1
+
+@media (max-width: 400px)
+  body[data-page="landing"]
+    > header
+      > nav
+        > a
+          margin                : 0 (SPACE / 2)
+          font-size             : FONT_SIZE_NORMAL
+          > img
+            vertical-align      : middle
+            height              : (UNIT / 1.65)
+        &.social
+          display               : none

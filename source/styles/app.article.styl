@@ -1,0 +1,54 @@
+body[data-page="landing"]
+  > article
+    .button
+      margin-top                : SPACE
+      height                    : HEIGHT = (UNIT / 1.25)
+      font-size                 : FONT_SIZE_BIG
+      font-weight               : FONT_WEIGHT_BOLD !important
+      line-height               : HEIGHT
+      color                     : THEME
+      border                    : solid 1px alpha(THEME, 25%)
+      transition                  all ANIMATION_DURATION ANIMATION_EASE
+      &:hover
+        background-color        : THEME
+        color                   : WHITE
+    &.landing
+      position                  : relative
+      height                    : 100vh
+      background-image          : url("/assets/img/background.jpg")
+      background-size           : cover
+      background-position       : 50% 50%
+      overflow                  : hidden
+      > *
+        z-index                 : 1
+        transition                all ANIMATION_DURATION ANIMATION_EASE
+        &.hide
+          opacity               : 0
+      > img
+        width                   : 25vw
+      > span
+        position                : absolute
+        left                    : 0
+        right                   : 0
+        bottom                  : SPACE
+        font-size               : FONT_SIZE_SMALL
+        text-align              : center
+        color                   : rgba(255,255,255,0.5)
+        > *
+          color                 : THEME
+
+  > nav
+    > a
+      color                     : BACKGROUND
+      text-decoration           : none
+      background-color          : lighten(COLOR, 50%)
+
+@media (max-width: 400px)
+  body[data-page="landing"]
+    > article
+      &.landing
+        max-height              : 320px
+        > img
+          width                 : 55vw
+        > span
+          display               : none

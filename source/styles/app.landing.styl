@@ -1,4 +1,7 @@
 body[data-page="landing"]
+  .color
+    &.theme
+      color                     : THEME
   .bck
     position                    : relative
     background-size             : cover !important
@@ -31,7 +34,7 @@ body[data-page="landing"]
 
   .box
     width                       : 50vw
-    height                      : 47.5vw
+    height                      : 45vw
     overflow                    : hidden
     > :not(.dots)
       z-index                   : 1
@@ -46,6 +49,9 @@ body[data-page="landing"]
         font-weight             : FONT_WEIGHT_THIN
         color                   : THEME
       + p
+        > span
+          margin                : 0 (SPACE / 2)
+          color                 : THEME
         &:before, &:after
           content               : ""
           margin                : 0 (SPACE / 2) (SPACE / 4) (SPACE / 2)
@@ -60,103 +66,10 @@ body[data-page="landing"]
     > p
       margin                    : 0 UNIT
       text-align                : center
+      font-size                 : SIZE = (1.25 * FONT_SIZE_NORMAL)
+      line-height               : 150%
       + p
         margin-top              : SPACE
-
-  > header
-    height                      : HEIGHT = (1.5 * UNIT)
-    position                    : fixed
-    top                         : -(HEIGHT)
-    left                        : 0
-    right                       : 0
-    z-index                     : 2
-    background-color            : WHITE
-    transition                    all ANIMATION_DURATION ANIMATION_EASE
-    &.scroll
-      top                       : 0
-      transition-delay            ANIMATION_DURATION
-    > nav
-      > a
-        display                 : inline-block
-        margin                  : 0 SPACE
-        height                  : HEIGHT = (UNIT / 1.25)
-        font-size               : FONT_SIZE_BIG
-        font-weight             : FONT_WEIGHT_BOLD
-        line-height             : HEIGHT
-        text-decoration         : none
-        color                   : THEME
-        background-color        : transparent
-        vertical-align          : middle
-        > img
-          height                : HEIGHT
-        &:not(.logo)
-          transition              all ANIMATION_DURATION ANIMATION_EASE
-          &:hover
-            color               : COLOR
-            box-shadow            0 (SPACE / 8) THEME
-
-  > article
-    .button
-      margin-top                : SPACE
-      height                    : HEIGHT = (UNIT / 1.25)
-      font-size                 : FONT_SIZE_NORMAL
-      font-weight               : FONT_WEIGHT_BOLD !important
-      line-height               : HEIGHT
-      color                     : THEME
-      border                    : solid 1px alpha(THEME, 25%)
-      transition                  all ANIMATION_DURATION ANIMATION_EASE
-      &:hover
-        background-color        : THEME
-        color                   : WHITE
-    &.landing
-      position                  : relative
-      height                    : 99vh
-      background-image          : url("/assets/img/background.jpg")
-      background-size           : cover
-      background-position       : 50% 50%
-      overflow                  : hidden
-      > *
-        z-index                 : 1
-        transition                all ANIMATION_DURATION ANIMATION_EASE
-        &.hide
-          opacity               : 0
-      > img
-        width                   : 25vw
-      > span
-        position                : absolute
-        left                    : 0
-        right                   : 0
-        bottom                  : SPACE
-        font-size               : FONT_SIZE_SMALL
-        text-align              : center
-        color                   : rgba(255,255,255,0.5)
-        > *
-          color                 : THEME
-
-  > nav
-    > a
-      color                     : BACKGROUND
-      text-decoration           : none
-      background-color          : lighten(COLOR, 50%)
-
-  > footer
-    padding                     : (2 * SPACE) 0
-    font-size                   : FONT_SIZE_SMALL
-    color                       : lighten(COLOR, 50%)
-    background-color            : darken(COLOR, 75%)
-    > *
-      padding                   : 0 (2 * SPACE)
-      &.right
-        span
-          margin                : 0 (SPACE / 4)
-          text-align            : center
-    a
-      text-decoration           : none
-      color                     : THEME
-      padding-bottom            : (SPACE / 3)
-      transition                  all ANIMATION_DURATION
-      &:hover
-        box-shadow                0 1px WHITE
 
 @media (max-width: 1024px)
   body[data-page="landing"]
@@ -170,7 +83,7 @@ body[data-page="landing"]
     .container
       padding                   : SPACE 0
     p
-      text-align                : justify
+      text-align                : center
     .box
       width                     : 100vw
       &:not(.square)
@@ -180,25 +93,3 @@ body[data-page="landing"]
         height                  : 100vw
       > p
         margin                  : 0 SPACE
-
-    > header
-      > nav
-        > a
-          margin                : 0 (SPACE / 2)
-          font-size             : FONT_SIZE_NORMAL
-          > img
-            vertical-align      : middle
-            height              : (UNIT / 1.65)
-
-    > article
-      &.landing
-        max-height              : 320px
-        > img
-          width                 : 55vw
-        > span
-          display               : none
-
-    > footer
-      > *
-        width                     : 100vw
-        text-align                : center !important
